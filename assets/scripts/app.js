@@ -44,7 +44,7 @@ console.log(userMessage2);
 console.log(5 + 10); //(this will display as '15')
 console.log("hi" + "earth") //(this will display as 'hiearth')
 console.log( 10 === 5 ); //triple equal checks for equality. the console will display 'false' (10 is not equal to 5)
-console.log( 10 < 10 ); //checks if 10 is greater than 10. the console will display 'true'
+console.log( 10 < 10 ); //checks if 10 is greater than 10
 if (10 === 10){
     console.log("works")
 } //checks if 10 is equal to 10 and then displays 'works' in console if true
@@ -58,3 +58,22 @@ function greet() {
 }
 //call the function:
 greet();
+
+//example of function being called with default value (message):
+function createGreeting(userName, message = "Hello!"){
+    return "Hi, I'm " + userName + ". " + message;
+};
+
+const greeting1 = createGreeting("Lisa");
+console.log(greeting1);
+
+const greeting2 = createGreeting("Lisa", "Hello, how are you?");
+console.log(greeting2);
+
+//__________________________________________________________
+////arrow functions:
+////this is for an 'anonymous' function:
+//export default (userName, message) => {
+//    console.log('Hello');
+//    return userName + message;
+//}
