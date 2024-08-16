@@ -77,3 +77,56 @@ console.log(greeting2);
 //    console.log('Hello');
 //    return userName + message;
 //}
+
+//__________________________________________________________
+//inside objects, I can store 'keys':
+const user = {
+    name: 'Lisa',
+    age: 28
+};
+//i can access individual fields within user, now:
+console.log(user.age); //this gives you access to a value within an object
+
+//besides key value pairs, objects can also store functions, called methods
+const user2 = {
+    name: "Jerry",
+    age: 25,
+    //method:
+    greet() {
+        console.log('Hello!');
+    }
+};
+//use method:
+console.log(user2.name);
+user2.greet();
+
+//inside an object, i can also access the properties of the object, inside the method by using 'this':
+const user3 = {
+    name: "Squash",
+    age: 1,
+    greet() {
+        console.log("Hello!");
+        console.log(this.age); //'this'
+    }
+}
+console.log(user3.name);
+user3.greet();
+
+//with class, we can create a blueprint that can be used later to 'make' the object
+//class always starts with a capital letter
+class User {
+    constructor (name, age) { //step 2: constructors used to accept parameters, input values, properties of the object to be used later
+        this.name = name;
+        this.age = age;
+    }
+
+    greet(){ //step 1: this is a 'blueprint' we can use later
+        console.log('Hi!');
+    }
+}
+const user1 = new User("Someone", 35); //this object will be based on the 'blueprint' above
+console.log(user1);
+
+//__________________________________________________________
+//arrays:
+
