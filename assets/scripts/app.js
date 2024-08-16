@@ -167,3 +167,94 @@ console.log(index);
 const editedHobbies = hobbies.map((item) => ({text: item})); //store any value here.
 console.log(editedHobbies);
 //in this example, a new array full of Javascript objects is listed, and under each object an item from the previous array is sorted
+
+//__________________________________________________________
+//destructuring
+//example: we want to use both the firstname and lastname
+//const userNameData = ["Lisa", "Viljoen"];
+//so we can specify it like this:
+//const firstName = userNameData[0];
+//const lastName = userNameData[1];
+//but the above code can be shortened:
+//create square brackets inside the constant instead, and 'destructure' the array ('pull values out of array'):
+const [firstName, lastName] = ["Lisa", "Viljoen"];
+
+console.log(firstName);
+console.log(lastName);
+
+//the destructuring above is only for objects. not arrays
+//use curly braces for arrays
+//destructuring this array:
+//const user4 = {
+//    name: "Lisa",
+//    age: 28
+//}
+//const name4 = user4.name;
+//const age4 = user4.age;
+const {name: username4, age4} = {
+    name: "Lisa",
+    age: 28
+};
+console.log(userName4);
+console.log(age4);
+
+//__________________________________________________________
+//spread operator
+//three dots which pull out all the elements of an array , adding them as comma-separated values to a new list
+const newHobbies = ["Reading"];
+const mergedHobbies = [...hobbies, ...newHobbies];
+console.log(mergedHobbies);
+
+//merging new list with other list
+const extendedUser = { //this spread operator merges this value in the list above
+    isAdmin: true,
+    ...user
+}
+console.log(extendedUser);
+
+//__________________________________________________________
+//other javascript functions:
+// const password = prompt("Your password");
+
+// if (password === "Hello") {
+//   console.log("Hello works");
+// } else if (password === "hello") {
+//   console.log("hello works");
+// } else {
+//   console.log("Access not granted.");
+// }
+
+// const hobbies = ["Sports", "Cooking"];
+
+// for (const hobby of hobbies) {
+//   console.log(hobby);
+// }
+
+// const list = document.querySelector("ul");
+// list.remove();
+
+// function handleTimeout() {
+//   console.log("Timed out!");
+// }
+
+// const handleTimeout2 = () => {
+//   console.log("Timed out ... again!");
+// };
+
+// setTimeout(handleTimeout, 2000);
+// setTimeout(handleTimeout2, 3000);
+// setTimeout(() => {
+//   console.log("More timing out...");
+// }, 4000);
+
+// function init() {
+//   function greet() {
+//     console.log(“Hi!“);
+//   }
+
+//   greet();
+// }
+
+// init();
+
+// const message = “Hello”;
