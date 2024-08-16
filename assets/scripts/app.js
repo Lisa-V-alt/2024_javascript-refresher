@@ -128,5 +128,42 @@ const user1 = new User("Someone", 35); //this object will be based on the 'bluep
 console.log(user1);
 
 //__________________________________________________________
+//objects allow you to group key value pairs together
+//arrays allow you to list objects stored in a certain order and accessed by their position in the list
 //arrays:
+const hobbies = ["Sports", "Cooking", "Reading"];
+console.log(hobbies[0]); //access whichever entry by its index (starting with 0)
 
+//array methods can be accessed easily just by typing the array name followed by a dot / period '.'
+//in this example, 'push' was used
+hobbies.push("Working");
+console.log(hobbies);
+
+//the findIndex method is particularly useful, it finds the index of a certain value.
+//It takes a function as an input.
+//This method is a great usecase for the arrow function, allowing you to compare it to... everything in the list
+//We are passing a function to another function.
+//findIndex needs a function which it can execute on our behalf, and it will execute it for every item in this array
+//it will pass that item for every execution into that function, and every item will be different for every execution,
+//and then we compare the item to some value we are looking for. This value is defined by the developer -- in this case, 'sports'
+hobbies.findIndex((item) => {
+    return item === 'Sports';
+})
+//when all you do between the curly brackets is 'return' something (like in the example above,
+//the arrow function can shorten your findindex method even further:
+const index = hobbies.findIndex((item) => item === "Sports");
+//the code above is now a very short, concise piece of code for:
+//defining a function which takes an input named 'item', and then compares 'item' to some other value to yield true,
+//or false (if they're not equal)
+
+console.log(index);
+
+//the map method:
+//map allows you to transform every item in an array to another item
+//map (like findindex) takes an input with the arrow function and also receives every item in the array
+//automatically, and every item in the array is provided
+//It's basically best for outputting 'list' content / mapping data into JSX elements.
+//map will return a new array
+const editedHobbies = hobbies.map((item) => ({text: item})); //store any value here.
+console.log(editedHobbies);
+//in this example, a new array full of Javascript objects is listed, and under each object an item from the previous array is sorted
